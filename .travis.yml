@@ -10,14 +10,13 @@ install:
   - deps='pip numpy pandas requests nose numpydoc sphinx pep8'
   - conda create -p $HOME/py --yes $deps "python=$TRAVIS_PYTHON_VERSION"
   - export PATH=$HOME/py/bin:$PATH
-  - pip install unittest2
+  - if [ "$TRAVIS_PYTHON_VERSION" == "2.6" ]; then pip --quiet install unittest2; fi
   # install our own package into the environment
   - "pip install ."
-script:
   # Download spark 1.0.0
   - "wget http://d3kbcqa49mib13.cloudfront.net/spark-1.0.0-bin-hadoop2.tgz"
   - "tar -xvf spark-1.0.0-bin-hadoop2.tgz"
-  # Run the tests
   - "export SPARK_HOME=./spark-1.0.0-bin-hadoop2/"
+script:
   - "./run-tests"
   - "pep8 sparklingpandas/"
