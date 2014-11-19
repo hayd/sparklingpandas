@@ -16,14 +16,15 @@
 # limitations under the License.
 #
 
-from sparklingpandas.utils import add_pyspark_path
-from sparklingpandas.prdd import PRDD
-add_pyspark_path()
 import pandas
 import numpy as np
 
+from sparklingpandas.utils import add_pyspark_path
+from sparklingpandas.prdd import PRDD
+add_pyspark_path()
 
-class GroupBy:
+
+class GroupBy(object):
 
     """An RDD with key value pairs, where each value is a Panda's dataframe and
     the key is the result of the group. Supports many of the same operations

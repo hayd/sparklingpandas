@@ -16,18 +16,19 @@
 # limitations under the License.
 #
 
-from sparklingpandas.utils import add_pyspark_path
 from functools import reduce
-
-add_pyspark_path()
-from pyspark.join import python_join, python_left_outer_join, \
-    python_right_outer_join, python_cogroup
-from pyspark.rdd import RDD
-from sparklingpandas.pstatcounter import PStatCounter
 import pandas
 
+from pyspark.join import (python_join, python_left_outer_join, \
+                          python_right_outer_join, python_cogroup)
+from pyspark.rdd import RDD
 
-class PRDD:
+from sparklingpandas.pstatcounter import PStatCounter
+from sparklingpandas.utils import add_pyspark_path
+add_pyspark_path()
+
+
+class PRDD(object):
 
     """A Panda Resilient Distributed Dataset (PRDD), is an extension of the RDD.
     It is an RDD containing Panda dataframes and provides special methods that

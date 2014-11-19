@@ -19,12 +19,12 @@ Look at the stats() method on PRDD for more info.
 # limitations under the License.
 #
 
-from sparklingpandas.utils import add_pyspark_path
 import pandas
 
-add_pyspark_path()
-
 from pyspark.statcounter import StatCounter
+
+from sparklingpandas.utils import add_pyspark_path
+add_pyspark_path()
 
 
 class PStatCounter(object):

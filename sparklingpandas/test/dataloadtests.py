@@ -18,15 +18,16 @@ Test all of the methods for loading data into PandaSpark
 # limitations under the License.
 #
 
-import pandas
-from tempfile import NamedTemporaryFile
-from sparklingpandas.test.sparklingpandastestcase import \
-    SparklingPandasTestCase
-import sys
-import unittest2
+import numpy as np
 from pandas.util.testing import assert_frame_equal
 from pandas.core.api import DataFrame
-import numpy as np
+import pandas
+import sys
+from tempfile import NamedTemporaryFile
+import unittest2
+
+from sparklingpandas.test.sparklingpandastestcase import \
+    SparklingPandasTestCase
 
 
 class DataLoad(SparklingPandasTestCase):

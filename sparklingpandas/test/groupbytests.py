@@ -16,13 +16,14 @@
 # limitations under the License.
 #
 
-from tempfile import NamedTemporaryFile
-from sparklingpandas.test.sparklingpandastestcase import \
-    SparklingPandasTestCase
+import numpy as np
 import sys
 import pandas as pd
+from tempfile import NamedTemporaryFile
 import unittest2
-import numpy as np
+
+from sparklingpandas.test.sparklingpandastestcase import \
+    SparklingPandasTestCase
 
 
 class Groupby(SparklingPandasTestCase):

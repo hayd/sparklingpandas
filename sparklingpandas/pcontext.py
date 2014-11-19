@@ -17,16 +17,18 @@
 # limitations under the License.
 #
 
-from sparklingpandas.utils import add_pyspark_path
 
-add_pyspark_path()
 import pandas
 from StringIO import StringIO as sio
+
 from pyspark.context import SparkContext
+
 from sparklingpandas.prdd import PRDD
+from sparklingpandas.utils import add_pyspark_path
+add_pyspark_path()
 
 
-class PSparkContext():
+class PSparkContext(object):
 
     """This is a thin wrapper around SparkContext from PySpark which makes it
     easy to load data into L{PRDD}s."""

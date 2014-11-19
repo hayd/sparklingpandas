@@ -17,16 +17,16 @@
 
 """This module provides some common test case base for PandaSparkTestCases"""
 
-from sparklingpandas.utils import add_pyspark_path
+import functools
 import pandas
+from pandas.util.testing import assert_frame_equal
+import sys
+import unittest2
 
-add_pyspark_path()
 from sparklingpandas.pcontext import PSparkContext
 from sparklingpandas.prdd import PRDD
-import unittest2
-import sys
-import functools
-from pandas.util.testing import assert_frame_equal
+from sparklingpandas.utils import add_pyspark_path
+add_pyspark_path()
 
 
 class SparklingPandasTestCase(unittest2.TestCase):
